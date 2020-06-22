@@ -19,6 +19,7 @@ module.exports = {
     ],
     themeConfig: {
         nav: [
+            { text: "主页", link: "/" },
             {
                 text: "前端",
                 items: [
@@ -34,7 +35,8 @@ module.exports = {
             "/sidebar/": ["", "one", "two"],
             "/web/js/": [""],
             "/web/css/": [""],
-            "/node/": [""]
+            "/node/": [""],
+            "/algorithm/": [""]
         },
     },
     plugins: [

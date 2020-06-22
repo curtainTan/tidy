@@ -1,16 +1,14 @@
 ---
 home: true
-heroImage: https://dss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1453877334,3832348013&fm=26&gp=0.jpg
+heroImage: bg.jpg
 actionText: Get Start →
 actionLink: /node/
 features:
 - title: day day up
   details: 记录每一天的进步, 一分耕耘，一分收获.
-- title: 程序员成长指北
-  details: 专注 Node.js 技术栈分享，从 前端 到 Node.js 再到 后端数据库，祝您成为优秀的高级 Node.js 全栈工程师
-- title: koala
-  details: 一个有趣的且乐于分享的人。座右铭：今天未完成的，明天更不会完成。
+- title: smile
+  details: 简单一点、轻松一点
+- title: awen-tan
+  details: 要记得开心  座右铭：纸上得来终觉浅
 footer: MIT Licensed | awen--tan
-
-
 ---
