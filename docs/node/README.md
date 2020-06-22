@@ -7,7 +7,9 @@
 child_process 提供四种异步创建子进程的方法：
 
 1. child_process.exec()
-1. child_process.execFile()
-1. child_process.fork()
-1. child_process.spawn()
+2. child_process.execFile()
+3. child_process.fork()
+4. child_process.spawn()
+
+
 
