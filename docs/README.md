@@ -1,6 +1,6 @@
 ---
 home: true
-heroImage: bg.jpg
+heroImage: http://pic.yupoo.com/tan473/3e476b16/d28735d3.jpg
 actionText: Get Start →
 actionLink: /node/
 features:

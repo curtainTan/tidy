@@ -18,6 +18,9 @@ module.exports = {
         ]
     ],
     themeConfig: {
+        sidebarDepth: 2,
+        lastUpdated: 'Last Updated',
+        // displayAllHeaders: true,
         nav: [
             { text: "主页", link: "/" },
             {
@@ -29,14 +32,16 @@ module.exports = {
             },
             { text: "node", link: "/node/" },
             { text: "算法", link: "/algorithm/" },
+            { text: "小技能", link: "/other/" },
             { text: "github", link: "https://github.com/curtainTan" }
         ],
         sidebar: {
             "/sidebar/": ["", "one", "two"],
-            "/web/js/": [""],
+            "/web/js/": ["", "Date", "common"],
             "/web/css/": [""],
             "/node/": [""],
-            "/algorithm/": [""]
+            "/algorithm/": [""],
+            "/other/": [""]
         },
     },
     plugins: [
