@@ -43,6 +43,64 @@ Date.prototype.Format = function (fmt) {
 console.log(new Date().Format('yyyy-MM-dd hh:mm:ss'))  // 2020-6-27 16:17:32
 ```
 
+## 防抖
+
+::: tip 定义
+指连续触发事件在 n 秒内连续触发，只执行最后一次的触发，并且在最后一次触发 n 秒后执行
+:::
+
+**用处：** 搜索框提示
+
+```js
+/** 防抖
+ * @param { function } fn 防抖函数
+ * @param { Number } timeout 时间
+ * @param { immediate } fn 第一次触发是否立即执行
+ */
+function debounce(fn = () => { }, timeout, immediate = false) {
+    let timer = null
+    return function () {
+        if (timer) { clearTimeout(timer) }
+        if (!timer && immediate) { fn.apply(this, arguments) }
+        timer = setTimeout(() => {
+            fn.apply(this, arguments)
+            // 是否需要每次第一次触发的时候都执行
+            // timer = null
+        }, timeout)
+    }
+}
+```
+
+## 节流
+
+::: tip 定义
+指连续触发事件在 n 秒中只执行一次，稀释函数执行频率。
+:::
+
+```js
+/**
+ * @param { function } fn 节流函数
+ * @param { Number } timeout 时间
+ * @param { immediate } fn 第一次触发是否立即执行
+ */
+function throttle(fn = () => { }, timeout, immediate = false) {
+    let timer = null
+    let isFirst = true
+    return function () {
+        if (isFirst && immediate) {
+            fn.apply(this, arguments)
+            isFirst = false
+        }
+        if (!timer) {
+            timer = setTimeout(() => {
+                fn.apply(this, arguments)
+                clearTimeout(timer)
+                timer = null
+            }, timeout)
+        }
+    }
+}
+```
 
 
 
