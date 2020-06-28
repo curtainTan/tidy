@@ -41,7 +41,7 @@ module.exports = {
             "/web/css/": [""],
             "/node/": [""],
             "/algorithm/": [""],
-            "/other/": [""]
+            "/other/": ["", "pm2"]
         },
     },
     plugins: [
