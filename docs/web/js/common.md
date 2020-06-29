@@ -23,6 +23,10 @@ console.log( getDays( 2020, 6 ) )  // 31
 ## 日期格式化
 
 ```js
+/** 
+ * 日期格式化
+ * @param { String } fmt 日期格式
+ */
 Date.prototype.Format = function (fmt) {
     let obj = {
         "y+": this.getFullYear(),   // 年
@@ -41,6 +45,37 @@ Date.prototype.Format = function (fmt) {
 }
 
 console.log(new Date().Format('yyyy-MM-dd hh:mm:ss'))  // 2020-6-27 16:17:32
+```
+
+## 倒计时
+
+```js
+/** 
+ * 倒计时
+ * @param { String } deadline 截止日期
+ */
+function countDown(deadline = "2021") {
+    var lastTime = new Date(deadline)
+    var nowTime = new Date()
+    var gapTime = lastTime.getTime() - nowTime.getTime()
+    var year = lastTime.getFullYear()
+    var day = Math.floor(gapTime / (1000 * 60 * 60 * 24))
+    var hours = 23 - nowTime.getHours()
+    var minutes = 59 - nowTime.getMinutes()
+    var seconds = 59 - nowTime.getSeconds()
+    return {
+        year,
+        day,
+        hours,
+        minutes,
+        seconds
+    }
+}
+
+setInterval(() => {
+    var date = countDown()
+    console.log(`距离 ${date.year} 年 还有 ${date.day} 天 - ${date.hours} 小时 ${date.minutes} 分 ${date.seconds} 秒`)
+}, 1000);
 ```
 
 ## 防抖
@@ -102,5 +137,38 @@ function throttle(fn = () => { }, timeout, immediate = false) {
 }
 ```
 
+## 深拷贝
+
+- 使用 JSON.stringify 与 JSON.parse 实现
+
+```js
+const deepClone = JSON.parse( JSON.stringify( obj ) )
+```
+
+::: tip 注意
+使用 JSON.stringify 不能处理 函数 和 undefined
+当处理对象有循环引用时，会报溢栈错误
+:::
+
+- 手动实现深拷贝
+
+解决循环引用问题，区分数组和对象
+
+```js
+// 深拷贝
+function deepClone(target, map = new WeakMap()) {
+    if (typeof target === "object") {
+        var cloneTarget = Array.isArray(target) ? [] : {}
+        if (map.get(target)) {
+            return target
+        }
+        for (key in target) {
+            cloneTarget[key] = deepClone(target[key], map)
+        }
+        return cloneTarget
+    }
+    return target
+}
+```
 
 

@@ -37,7 +37,7 @@ module.exports = {
         ],
         sidebar: {
             "/sidebar/": ["", "one", "two"],
-            "/web/js/": ["", "Date", "common"],
+            "/web/js/": ["", "Date", "common", "switchType"],
             "/web/css/": [""],
             "/node/": [""],
             "/algorithm/": [""],
